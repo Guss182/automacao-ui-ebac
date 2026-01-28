@@ -6,12 +6,12 @@ describe('Funcionalidade: Produtos', () => {
     cy.visit('catalog.html')
   })
 
-  it('Deve exibir o título da página', () => {
-    cy.contains('Conheça Nosso Acervo').should('be.visible')
-  })
-
   it('Deve exibir os produtos na tela', () => {
     cy.get('.card').should('have.length.greaterThan', 0)
+  })
+
+  it('Deve exibir o cabeçalho da página', () => {
+    cy.contains('Conheça Nosso Acervo').should('be.visible')
   })
 
   it('Não deve exibir itens no carrinho ao carregar a página', () => {
@@ -29,11 +29,11 @@ describe('Funcionalidade: Produtos', () => {
   })
 
   it('Deve permitir multiplos produtos ao carrinho', () => {
-  cy.get('.btn-primary').eq(0).click()
-  cy.get('.btn-primary').eq(1).click()
-  cy.get('.btn-primary').eq(2).click()
-  cy.get('#cart-count').should('contain', '3')
-})
+    cy.get('.btn-primary').eq(0).click()
+    cy.get('.btn-primary').eq(1).click()
+    cy.get('.btn-primary').eq(2).click()
+    cy.get('#cart-count').should('contain', '3')
+  })
 
   it('Deve exibir alerta ao adicionar produto específico', () => {
     cy.get('.btn-primary').eq(4).click()
