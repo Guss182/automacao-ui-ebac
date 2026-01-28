@@ -11,7 +11,6 @@ describe('Pré-cadastro', () => {
     const nome = faker.person.fullName()
     const email = faker.internet.email()
     const senha = faker.internet.password(8)
-
     cy.get('#name').type(nome)
     cy.get('#email').type(email)
     cy.get('#password').type(senha)
@@ -28,7 +27,6 @@ describe('Pré-cadastro', () => {
 
   it('Deve exibir uma mensagem de erro ao informar email inválido', () => {
     const nome = faker.person.fullName()
-
     cy.get('#name').type(nome)
     cy.get('#email').type('emailinvalido')
     cy.get('#password').type('123456@senha')
@@ -53,7 +51,6 @@ describe('Pré-cadastro', () => {
   it('Deve exibir mensagem informando a força da senha', () => {
     const nome = faker.person.fullName()
     const email = faker.internet.email()
-
     cy.get('#name').type(nome)
     cy.get('#email').type(email)
     cy.get('#password').type('123')
@@ -64,7 +61,6 @@ describe('Pré-cadastro', () => {
   it('Deve exibir mensagem de erro ao inserir senha fraca', () => {
     const nome = faker.person.fullName()
     const email = faker.internet.email()
-
     cy.get('#name').type(nome)
     cy.get('#email').type(email)
     cy.get('#password').type('123')
@@ -81,7 +77,6 @@ describe('Pré-cadastro', () => {
     const email = faker.internet.email()
     const senha = faker.internet.password(8)
     const senhaDiferente = faker.internet.password(8)
-
     cy.get('#name').type(nome)
     cy.get('#email').type(email)
     cy.get('#password').type(senha)
